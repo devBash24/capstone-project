@@ -74,13 +74,13 @@ export default async function Home() {
       <div className="max-w-6xl mx-auto px-6 py-12 text-center">
         <p className="text-muted-foreground text-lg">© 2024 My ePortfolio. Crafted with passion for excellence.</p>
         <div className="flex justify-center space-x-6 mt-4">
-          <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+          <a href={data.links.linkedIn} className="text-muted-foreground hover:text-primary transition-colors">
             LinkedIn
           </a>
-          <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+          <a href={data.links.github} className="text-muted-foreground hover:text-primary transition-colors">
             GitHub
           </a>
-          <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+          <a href={data.links.email} className="text-muted-foreground hover:text-primary transition-colors">
             Email
           </a>
         </div>

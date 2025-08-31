@@ -122,5 +122,10 @@
     ],
     "ongoingGrowth": "I am committed to continuous learning and professional development. This ePortfolio will continue to evolve as I progress through my career journey, documenting new achievements, skills, and insights.",
     "quote": "\"The future depends on what you do today.\" \u2013 Mahatma Gandhi"
+  },
+  "links":{
+    "linkedIn": "https://www.linkedin.com/in/dev-bash-john",
+    "github": "https://github.com/devBash24",
+    "email": "mailto:devbash98@gmail.com"
   }
 }

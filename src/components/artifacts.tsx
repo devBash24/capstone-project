@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Badge } from "./ui/badge"
-import { Calendar, Timer, ListChecks, Home, BookOpen, Dumbbell, Wallet, Notebook, Linkedin, Star, FileText } from "lucide-react"
+import { Calendar, Timer, ListChecks, Home, BookOpen, Dumbbell, Wallet, Notebook, Linkedin, Star, FileText, ChevronDown } from "lucide-react"
 
 
 const iconMap: Record<string, React.ElementType> = {
@@ -104,15 +104,16 @@ const Artifacts = ({ artifact }: ArtifactProps) => {
           />
           <button
             type="button"
-            className="mt-1 text-xs font-medium text-primary hover:underline"
+            className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
             onClick={() => setDescExpanded((v) => !v)}
             aria-expanded={descExpanded}
           >
-            {descExpanded ? "Show less" : "Show more"}
+            <span>{descExpanded ? "Show less" : "Show more"}</span>
+            <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${descExpanded ? "rotate-180" : "rotate-0"}`} />
           </button>
         </div>
 
-        <div className="mt-4 bg-muted/50 p-3 rounded-lg border-l-4 border-secondary">
+        <div className="mt-4 bg-muted/50 p-3 rounded-lg border-l-4 border-primary">
           <p className="text-xs font-medium text-muted-foreground mb-1">Reflection:</p>
           <ExpandableText
             text={artifact.reflection}
@@ -122,11 +123,12 @@ const Artifacts = ({ artifact }: ArtifactProps) => {
           />
           <button
             type="button"
-            className="mt-2 text-xs font-medium text-primary hover:underline"
+            className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
             onClick={() => setReflExpanded((v) => !v)}
             aria-expanded={reflExpanded}
           >
-            {reflExpanded ? "Show less" : "Show more"}
+            <span>{reflExpanded ? "Show less" : "Show more"}</span>
+            <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${reflExpanded ? "rotate-180" : "rotate-0"}`} />
           </button>
         </div>
 
