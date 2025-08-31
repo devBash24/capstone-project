@@ -1,0 +1,126 @@
+{
+  "student": {
+    "name": "Bash John",
+    "program": "OECS Advanced Digital Skills Programme",
+    "mentor": "Marva Edward-Oculien",
+    "goal": "Transition from Administrative Assistant to Software Developer",
+    "motto": "Per Aspera Ad Astra \u2013 Through hardships to the stars"
+  },
+  "sectionOne": {
+    "caption": "From Discipline to Development: My Journey of Growth",
+    "purposeStatement": "Welcome to my digital portfolio, a comprehensive showcase of my professional journey, personal development, and growth as I transition into the tech field. This ePortfolio serves as a living document that chronicles my experiences, challenges, achievements, and reflections. Through this collection of work, I aim to demonstrate my commitment to lifelong learning, discipline, and perseverance. Each artifact represents a milestone in my journey to balance full-time work, side jobs, and my career goal of becoming a software developer.",
+    "letterToSelf": "\"Dear Future Self, as I embark on this journey, I commit to embracing challenges as opportunities for growth. Each artifact and reflection documented here represents not just an achievement, but a step toward becoming the software developer and professional I aspire to be. May this portfolio always remind me of my resilience, my discipline, and my vision of a brighter future.\"",
+    "keyMilestones": [
+      "Applied time management strategies (Pomodoro, Eisenhower, Time-blocking) and discovered the value of adaptation.",
+      "Established consistent journaling and reading habits to track growth and self-awareness.",
+      "Achieved personal financial goals (Stratum Saving Goal, disciplined budgeting).",
+      "Updated my LinkedIn profile, building a professional presence and discovering AI career tools.",
+      "Built my capstone website using Next.js to showcase my growth."
+    ],
+    "quote": "\"Success is the sum of small efforts, repeated day in and day out.\" \u2013 Robert Collier"
+  },
+  "sectionTwo": {
+    "caption": "Weekly Reflections: Learning, Adapting, Growing",
+    "artifacts": [
+      {
+        "date": "July 14–20, 2025",
+        "title": "First Attempt with Pomodoro Technique",
+        "description": "Tried the Pomodoro method (25-minute work blocks + 5-minute breaks) during a busy audit week.",
+        "reflection": "This was my first week experimenting with time management techniques...",
+        "quote": "\"Hard work beats talent when talent doesn’t work hard.\" – Tim Notke",
+        "icon": "Timer"
+      },
+      {
+        "date": "July 21–27, 2025",
+        "title": "Eisenhower Matrix Trials",
+        "description": "Experimented with the Eisenhower technique...",
+        "reflection": "I applied the Eisenhower Matrix to my work...",
+        "quote": "\"Don’t count the days, make the days count.\" – Muhammad Ali",
+        "icon": "ListChecks"
+      },
+      {
+        "date": "July 28–August 3, 2025",
+        "title": "Discovering Time-Blocking",
+        "description": "Shifted from Eisenhower to Time-Blocking...",
+        "reflection": "Time-blocking worked much better...",
+        "quote": "\"Either you run the day or the day runs you.\" – Jim Rohn",
+        "icon": "Calendar"
+      },
+      {
+        "date": "August 4–10, 2025",
+        "title": "Work-Life Balance Improvements",
+        "description": "Managed to consistently finish work...",
+        "reflection": "This was the first week I truly felt balance...",
+        "quote": "\"It’s not the load that breaks you down, it’s the way you carry it.\" – Lou Holtz",
+        "icon": "Home"
+      },
+      {
+        "date": "August 11–17, 2025",
+        "title": "Journaling Routine Established",
+        "description": "Began weekly reflections every Sunday...",
+        "reflection": "I started journaling 2–3 times per week...",
+        "quote": "\"We do not learn from experience... we learn from reflecting on experience.\" – John Dewey",
+        "icon": "BookOpen"
+      },
+      {
+        "date": "August 18–24, 2025",
+        "title": "Gym and Habit-Building Progress",
+        "description": "Incorporated fitness into my weekly schedule.",
+        "reflection": "This week I went to the gym twice...",
+        "quote": "\"A little progress each day adds up to big results.\" – Satya Nani",
+        "icon": "Dumbbell"
+      },
+      {
+        "date": "August 25–31, 2025",
+        "title": "Stratum Saving Goal Achieved",
+        "description": "Created a monthly investment saving target...",
+        "reflection": "This was a huge milestone financially...",
+        "quote": "\"Do not save what is left after spending, but spend what is left after saving.\" – Warren Buffett",
+        "icon": "Wallet"
+      },
+      {
+        "date": "September 1–7, 2025",
+        "title": "Journaling Consistency and Daily Reading",
+        "description": "Increased journaling frequency...",
+        "reflection": "By early September, journaling became second nature...",
+        "quote": "\"Reading is essential for those who seek to rise above the ordinary.\" – Jim Rohn",
+        "icon": "Notebook"
+      },
+      {
+        "date": "September 8–14, 2025",
+        "title": "LinkedIn Profile Update and AI Discovery",
+        "description": "Finally updated my LinkedIn profile...",
+        "reflection": "This exercise pushed me to update my professional profile...",
+        "quote": "\"Your brand is what people say about you when you’re not in the room.\" – Jeff Bezos",
+        "icon": "Linkedin"
+      },
+      {
+        "date": "September 15–21, 2025",
+        "title": "Reflection on Growth So Far",
+        "description": "Looked back on two months of time management...",
+        "reflection": "Comparing myself to July, I see a huge difference...",
+        "quote": "\"Success is not final, failure is not fatal: it is the courage to continue that counts.\" – Winston Churchill",
+        "icon": "Star"
+      }
+    ]
+    
+  },
+  "sectionThree": {
+    "caption": "Charting My Path Forward",
+    "futureGoals": [
+      "Secure a Junior Developer Role \u2013 Begin a full transition into the tech industry within the next year.",
+      "Advance Technical Skills \u2013 Deepen expertise in React, Next.js, and backend development.",
+      "Strengthen Communication Skills \u2013 Build confidence in public speaking and professional networking.",
+      "Maintain Work-Life Balance \u2013 Continue journaling, fitness, and family time routines.",
+      "Financial Growth \u2013 Expand on savings strategies and investment goals."
+    ],
+    "keyInsights": [
+      "Growth comes from trial, error, and adaptation.",
+      "Reflection and journaling fuel self-awareness and progress.",
+      "Protecting personal time is as important as professional productivity.",
+      "Visibility through tools like LinkedIn is critical for career growth."
+    ],
+    "ongoingGrowth": "I am committed to continuous learning and professional development. This ePortfolio will continue to evolve as I progress through my career journey, documenting new achievements, skills, and insights.",
+    "quote": "\"The future depends on what you do today.\" \u2013 Mahatma Gandhi"
+  }
+}

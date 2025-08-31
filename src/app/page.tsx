@@ -1,103 +1,91 @@
-import Image from "next/image";
+import { EvidenceSection } from "@/components/section/evidence-section";
+import { FutureGoalsSection } from "@/components/section/future-goals-section";
+import { IntroductionSection } from "@/components/section/introduction-section";
+import { TableOfContents } from "@/components/section/table-of-contents";
+import data from "@/data/eportfolio.json";
 
-export default function Home() {
+
+export default async function Home() {
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-background">
+    {/* Hero Section */}
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary via-secondary to-accent">
+      <div className="absolute inset-0 bg-black/10"></div>
+      <div className="relative max-w-6xl mx-auto px-6 py-24 text-center">
+        <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">{data.student.name}&apos;s ePortfolio</h1>
+        <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+          {data.student.goal}
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button className="bg-white text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/90 transition-colors shadow-lg">
+            Explore My Work
+          </button>
+          <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors">
+            Download Resume
+          </button>
+        </div>
+      </div>
+      {/* Decorative Gradient Orbs */}
+      <div className="absolute top-20 left-10 w-32 h-32 bg-white/20 rounded-full blur-xl"></div>
+      <div className="absolute bottom-20 right-10 w-40 h-40 bg-white/15 rounded-full blur-2xl"></div>
+    </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+    {/* Updated Header */}
+    <header className="bg-card/80 backdrop-blur-sm border-b border-border sticky top-0 z-10">
+      <div className="max-w-6xl mx-auto px-6 py-4">
+        <nav className="flex items-center justify-between">
+          <div className="font-serif font-bold text-xl text-foreground">{data.student.name}</div>
+          <div className="hidden md:flex space-x-8">
+            <a href="#introduction" className="text-muted-foreground hover:text-primary transition-colors">
+              About
+            </a>
+            <a href="#evidence" className="text-muted-foreground hover:text-primary transition-colors">
+              Work
+            </a>
+            <a href="#goals" className="text-muted-foreground hover:text-primary transition-colors">
+              Goals
+            </a>
+            <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+              Contact
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    {/* Main Content */}
+    <main className="max-w-6xl mx-auto px-6 py-16 space-y-20">
+      {/* Table of Contents */}
+      <TableOfContents />
+
+      {/* Introduction Section */}
+      <IntroductionSection />
+
+      {/* Evidence of Learning Section */}
+      <EvidenceSection />
+
+      {/* Future Goals & Reflections Section */}
+      <FutureGoalsSection />
+    </main>
+
+    {/* Updated Footer */}
+    <footer className="bg-gradient-to-r from-primary/5 to-secondary/5 border-t border-border mt-20">
+      <div className="max-w-6xl mx-auto px-6 py-12 text-center">
+        <p className="text-muted-foreground text-lg">© 2024 My ePortfolio. Crafted with passion for excellence.</p>
+        <div className="flex justify-center space-x-6 mt-4">
+          <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            LinkedIn
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+          <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            GitHub
+          </a>
+          <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+            Email
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </footer>
+  </div>
   );
 }
