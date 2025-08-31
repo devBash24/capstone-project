@@ -11,7 +11,7 @@ export default async function Home() {
     <div className="min-h-screen bg-background">
     {/* Hero Section */}
     <section className="relative overflow-hidden bg-gradient-to-br from-primary via-secondary to-accent">
-      <div className="absolute inset-0 bg-black/10"></div>
+      <div className="absolute inset-0 bg-black/40"></div>
       <div className="relative max-w-6xl mx-auto px-6 py-24 text-center">
         <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">{data.student.name}&apos;s ePortfolio</h1>
         <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">

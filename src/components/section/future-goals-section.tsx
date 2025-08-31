@@ -7,7 +7,8 @@ export function FutureGoalsSection() {
 
   return (
     <section id="future-goals" className="space-y-8">
-      <div className="text-center">
+      <div className="rounded-2xl border border-border shadow-sm bg-card p-6 md:p-8">
+      <div className="text-center mb-8">
         <p className="text-primary font-medium mb-2">{sectionThree.caption}</p>
         <h2 className="text-3xl font-serif font-bold text-foreground">Future Goals & Reflections</h2>
         <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
@@ -17,10 +18,10 @@ export function FutureGoalsSection() {
 
       <div className="grid lg:grid-cols-2 gap-8">
         {/* Future Goals */}
-        <Card className="bg-card border-border">
+        <Card className="bg-card border-border rounded-xl">
           <CardHeader>
             <CardTitle className="text-xl font-serif text-card-foreground flex items-center gap-2">
-              <Target className="w-5 h-5 text-accent" />
+              <Target className="w-5 h-5 text-primary" />
               Future Goals
             </CardTitle>
           </CardHeader>
@@ -39,10 +40,10 @@ export function FutureGoalsSection() {
         </Card>
 
         {/* Insights & Reflections */}
-        <Card className="bg-gradient-to-br from-accent/10 to-secondary/10 border-accent/20">
+        <Card className="bg-accent/10 border-accent/30 rounded-xl">
           <CardHeader>
             <CardTitle className="text-xl font-serif text-card-foreground flex items-center gap-2">
-              <Lightbulb className="w-5 h-5 text-accent" />
+              <Lightbulb className="w-5 h-5 text-primary" />
               Key Insights
             </CardTitle>
           </CardHeader>
@@ -64,6 +65,7 @@ export function FutureGoalsSection() {
             </div>
           </CardContent>
         </Card>
+      </div>
       </div>
     </section>
   )

@@ -7,14 +7,15 @@ export function IntroductionSection() {
   const sectionOne = data.sectionOne;
   return (
     <section id="introduction" className="space-y-8">
-      <div className="text-center">
-        <p className="text-secondary font-medium mb-2">{sectionOne.caption}</p>
+      <div className="rounded-2xl border border-border shadow-sm bg-card p-6 md:p-8">
+      <div className="text-center mb-8">
+        <p className="text-secondary-foreground font-medium mb-2">{sectionOne.caption}</p>
         <h2 className="text-3xl font-serif font-bold text-foreground">Introduction</h2>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-8">
         {/* Purpose Statement */}
-        <Card className="bg-card border-border">
+        <Card className="bg-card border-border rounded-xl">
           <CardHeader>
             <CardTitle className="text-xl font-serif text-card-foreground">Purpose Statement</CardTitle>
           </CardHeader>
@@ -36,10 +37,10 @@ export function IntroductionSection() {
         </Card>
 
         {/* Letter to Self */}
-        <Card className="bg-gradient-to-br from-secondary/10 to-accent/10 border-secondary/20">
+        <Card className="bg-accent/10 border-accent/30 rounded-xl">
           <CardHeader>
             <CardTitle className="text-xl font-serif text-card-foreground flex items-center gap-2">
-              <Quote className="w-5 h-5 text-secondary" />
+              <Quote className="w-5 h-5 text-primary" />
               Letter to Self
             </CardTitle>
           </CardHeader>
@@ -62,6 +63,7 @@ export function IntroductionSection() {
             </div>
           </CardContent>
         </Card>
+      </div>
       </div>
     </section>
   )
