@@ -52,7 +52,7 @@ export default async function Home() {
     {/* Updated Footer */}
     <footer className="bg-gradient-to-r from-primary/5 to-secondary/5 border-t border-border mt-20">
       <div className="max-w-6xl mx-auto px-6 py-12 text-center">
-        <p className="text-muted-foreground text-lg">© 2024 My ePortfolio. Crafted with passion for excellence.</p>
+        <p className="text-muted-foreground text-lg">{data.copyright}</p>
         <div className="flex justify-center space-x-6 mt-4">
           <a href={data.links.linkedIn} className="text-muted-foreground hover:text-primary transition-colors">
             LinkedIn

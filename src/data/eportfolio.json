@@ -17,93 +17,113 @@
       "Updated my LinkedIn profile, building a professional presence and discovering AI career tools.",
       "Built my capstone website using Next.js to showcase my growth."
     ],
-    "quote": "\"Success is the sum of small efforts, repeated day in and day out.\" \u2013 Robert Collier"
+    "quote": "Success is the sum of small efforts, repeated day in and day out.",
+    "quoteAuthor": "Robert Collier"
   },
   "sectionTwo": {
     "caption": "Weekly Reflections: Learning, Adapting, Growing",
     "artifacts": [
       {
-        "date": "July 14–20, 2025",
+        "date": "2025-07-20",
         "title": "First Attempt with Pomodoro Technique",
         "description": "Tried the Pomodoro method (25-minute work blocks + 5-minute breaks) during a busy audit week.",
-        "reflection": "This was my first week experimenting with time management techniques...",
-        "quote": "\"Hard work beats talent when talent doesn’t work hard.\" – Tim Notke",
-        "icon": "Timer"
+        "reflection": "This was my first week experimenting with time management techniques. The Pomodoro method worked when I was studying at home, but at work, interruptions made it difficult to complete cycles. By the end of the week, I felt frustrated and realized that not every technique fits every environment. Still, it was a good first step in learning how I work best.",
+        "quote": "Hard work beats talent when talent doesn\u2019t work hard.",
+        "quoteAuthor": "Tim Notke",
+        "icon": "Timer",
+        "type": "productivity"
       },
       {
-        "date": "July 21–27, 2025",
+        "date": "2025-07-27",
         "title": "Eisenhower Matrix Trials",
-        "description": "Experimented with the Eisenhower technique...",
-        "reflection": "I applied the Eisenhower Matrix to my work...",
-        "quote": "\"Don’t count the days, make the days count.\" – Muhammad Ali",
-        "icon": "ListChecks"
+        "description": "Experimented with the Eisenhower technique to separate urgent vs. important tasks.",
+        "reflection": "I applied the Eisenhower Matrix to my work and studies. While it helped me prioritize, it didn\u2019t solve my biggest issue: unpredictable interruptions and long working hours. It felt useful on paper but less effective in real life. I learned that strategies need to match context.",
+        "quote": "Don\u2019t count the days, make the days count.",
+        "quoteAuthor": "Muhammad Ali",
+        "icon": "ListChecks",
+        "type": "productivity"
       },
       {
-        "date": "July 28–August 3, 2025",
+        "date": "2025-08-03",
         "title": "Discovering Time-Blocking",
-        "description": "Shifted from Eisenhower to Time-Blocking...",
-        "reflection": "Time-blocking worked much better...",
-        "quote": "\"Either you run the day or the day runs you.\" – Jim Rohn",
-        "icon": "Calendar"
+        "description": "Shifted from Eisenhower to Time-Blocking, scheduling work, study, and personal routines using Notion Calendar.",
+        "reflection": "Time-blocking worked much better than Eisenhower for me. I could visually see my day, set realistic boundaries, and stick closer to finishing work around 4:30 PM. This helped me carve out time for family, gym, and personal projects. I felt less overwhelmed and more in control.",
+        "quote": "Either you run the day or the day runs you.",
+        "quoteAuthor": "Jim Rohn",
+        "icon": "Calendar",
+        "type": "productivity"
       },
       {
-        "date": "August 4–10, 2025",
+        "date": "2025-08-10",
         "title": "Work-Life Balance Improvements",
-        "description": "Managed to consistently finish work...",
-        "reflection": "This was the first week I truly felt balance...",
-        "quote": "\"It’s not the load that breaks you down, it’s the way you carry it.\" – Lou Holtz",
-        "icon": "Home"
+        "description": "Managed to consistently finish work by 4:30 PM and spend evenings with family.",
+        "reflection": "This was the first week I truly felt balance. Leaving work earlier gave me time to bond with family and pursue fitness. I realized that time management is also about protecting personal time, not just getting more work done.",
+        "quote": "It\u2019s not the load that breaks you down, it\u2019s the way you carry it.",
+        "quoteAuthor": "Lou Holtz",
+        "icon": "Home",
+        "type": "balance"
       },
       {
-        "date": "August 11–17, 2025",
+        "date": "2025-08-17",
         "title": "Journaling Routine Established",
-        "description": "Began weekly reflections every Sunday...",
-        "reflection": "I started journaling 2–3 times per week...",
-        "quote": "\"We do not learn from experience... we learn from reflecting on experience.\" – John Dewey",
-        "icon": "BookOpen"
+        "description": "Began weekly reflections every Sunday using the Journal app on iOS.",
+        "reflection": "I started journaling 2\u20133 times per week and added a weekly summary entry on Sundays. This gave me clarity and accountability. Even when I didn\u2019t meet all my goals, I could adjust for the next week. Journaling became my personal feedback loop.",
+        "quote": "We do not learn from experience... we learn from reflecting on experience.",
+        "quoteAuthor": "John Dewey",
+        "icon": "BookOpen",
+        "type": "journaling"
       },
       {
-        "date": "August 18–24, 2025",
+        "date": "2025-08-24",
         "title": "Gym and Habit-Building Progress",
         "description": "Incorporated fitness into my weekly schedule.",
-        "reflection": "This week I went to the gym twice...",
-        "quote": "\"A little progress each day adds up to big results.\" – Satya Nani",
-        "icon": "Dumbbell"
+        "reflection": "This week I went to the gym twice. While it wasn\u2019t my target of 5 sessions, I reframed it as a win because it was progress compared to before. I learned that habits are built gradually and that consistency matters more than perfection.",
+        "quote": "A little progress each day adds up to big results.",
+        "quoteAuthor": "Satya Nani",
+        "icon": "Dumbbell",
+        "type": "fitness"
       },
       {
-        "date": "August 25–31, 2025",
+        "date": "2025-08-31",
         "title": "Stratum Saving Goal Achieved",
-        "description": "Created a monthly investment saving target...",
-        "reflection": "This was a huge milestone financially...",
-        "quote": "\"Do not save what is left after spending, but spend what is left after saving.\" – Warren Buffett",
-        "icon": "Wallet"
+        "description": "Created a monthly investment saving target and successfully met it.",
+        "reflection": "This was a huge milestone for me financially. It showed me that I can apply the same principles of SMART goals to money management. Completing this saving goal gave me confidence and reinforced that discipline applies across both time and finances.",
+        "quote": "Do not save what is left after spending, but spend what is left after saving.",
+        "quoteAuthor": "Warren Buffett",
+        "icon": "Wallet",
+        "type": "balance"
       },
       {
-        "date": "September 1–7, 2025",
+        "date": "2025-09-01",
         "title": "Journaling Consistency and Daily Reading",
-        "description": "Increased journaling frequency...",
-        "reflection": "By early September, journaling became second nature...",
-        "quote": "\"Reading is essential for those who seek to rise above the ordinary.\" – Jim Rohn",
-        "icon": "Notebook"
+        "description": "Increased journaling frequency to 5 nights per week and integrated daily reading.",
+        "reflection": "By early September, journaling became second nature. I noticed patterns in my energy and productivity, which helped me adjust my schedule. Reading regularly also fueled my learning and mindset. The biggest lesson: self-awareness comes from consistent reflection.",
+        "quote": "Reading is essential for those who seek to rise above the ordinary.",
+        "quoteAuthor": "Jim Rohn",
+        "icon": "Notebook",
+        "type": "journaling"
       },
       {
-        "date": "September 8–14, 2025",
+        "date": "2025-09-07",
         "title": "LinkedIn Profile Update and AI Discovery",
-        "description": "Finally updated my LinkedIn profile...",
-        "reflection": "This exercise pushed me to update my professional profile...",
-        "quote": "\"Your brand is what people say about you when you’re not in the room.\" – Jeff Bezos",
-        "icon": "Linkedin"
+        "description": "Finally updated my LinkedIn profile after months of postponing.",
+        "reflection": "This exercise pushed me to update my professional profile. While doing so, I explored AI applications that help with resume building, branding, and networking. It was eye-opening to see how these tools can accelerate career development. This experience showed me the value of visibility and personal branding alongside technical skills.",
+        "quote": "Your brand is what people say about you when you\u2019re not in the room.",
+        "quoteAuthor": "Jeff Bezos",
+        "icon": "Linkedin",
+        "type": "productivity"
       },
       {
-        "date": "September 15–21, 2025",
-        "title": "Reflection on Growth So Far",
-        "description": "Looked back on two months of time management...",
-        "reflection": "Comparing myself to July, I see a huge difference...",
-        "quote": "\"Success is not final, failure is not fatal: it is the courage to continue that counts.\" – Winston Churchill",
-        "icon": "Star"
+        "date": "2025-09-07",
+        "title": "Using EOX Software for Mock Interviews",
+        "description": "Practiced interviews using EOX software to simulate real scenarios and apply the STAR method.",
+        "reflection": "This week I used EOX to practice mock interviews. Structuring responses with the STAR method made it easier to organize my thoughts and present them clearly. I realized how much more confident I feel when I approach questions with a framework. This experience showed me the importance of preparation and how digital tools can support career readiness.",
+        "quote": "By failing to prepare, you are preparing to fail.",
+        "quoteAuthor": "Benjamin Franklin",
+        "icon": "FileText",
+        "type": "productivity"
       }
     ]
-    
   },
   "sectionThree": {
     "caption": "Charting My Path Forward",
@@ -121,11 +141,14 @@
       "Visibility through tools like LinkedIn is critical for career growth."
     ],
     "ongoingGrowth": "I am committed to continuous learning and professional development. This ePortfolio will continue to evolve as I progress through my career journey, documenting new achievements, skills, and insights.",
-    "quote": "\"The future depends on what you do today.\" \u2013 Mahatma Gandhi"
+    "quote": "The future depends on what you do today.",
+    "quoteAuthor": "Mahatma Gandhi"
   },
   "links":{
-    "linkedIn": "https://www.linkedin.com/in/dev-bash-john",
-    "github": "https://github.com/devBash24",
-    "email": "mailto:devbash98@gmail.com"
-  }
+    "github":"https://github.com/devBash24",
+    "linkedIn":"www.linkedin.com/in/dev-bash-john",
+    "email":"bashjohn1998@gmail.com"
+
+  },
+  "copyright":"© 2025 Bash John. All rights reserved. Per Aspera ad Astra — Through hardships to the stars."
 }

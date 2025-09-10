@@ -23,16 +23,16 @@ export function IntroductionSection() {
             <p className="text-card-foreground leading-relaxed">
               {sectionOne.purposeStatement}
             </p>
-            {/* <p className="text-card-foreground leading-relaxed">
+            <p className="text-card-foreground leading-relaxed">
               Welcome to my digital portfolio, a comprehensive showcase of my academic journey, professional
               development, and personal growth. This ePortfolio serves as a living document that chronicles my
               educational experiences, achievements, and reflections.
-            </p> */}
-            {/* <p className="text-muted-foreground leading-relaxed">
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
               Through this collection of work, I aim to demonstrate my commitment to lifelong learning, critical
               thinking, and professional excellence. Each artifact represents a milestone in my educational journey and
               contributes to my overall growth as a scholar.
-            </p> */}
+            </p>
           </CardContent>
         </Card>
 

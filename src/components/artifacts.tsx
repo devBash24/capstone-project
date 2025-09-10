@@ -1,9 +1,22 @@
-"use client"
-import { useEffect, useRef, useState } from "react"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { Badge } from "./ui/badge"
-import { Calendar, Timer, ListChecks, Home, BookOpen, Dumbbell, Wallet, Notebook, Linkedin, Star, FileText, ChevronDown } from "lucide-react"
-
+"use client";
+import { useState } from "react";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Badge } from "./ui/badge";
+import {
+  Calendar,
+  Timer,
+  ListChecks,
+  Home,
+  BookOpen,
+  Dumbbell,
+  Wallet,
+  Notebook,
+  Linkedin,
+  Star,
+  FileText,
+  ChevronDown,
+  Icon,
+} from "lucide-react";
 
 const iconMap: Record<string, React.ElementType> = {
   Timer,
@@ -16,131 +29,98 @@ const iconMap: Record<string, React.ElementType> = {
   Notebook,
   Linkedin,
   Star,
-}
+};
+const typeColors = {
+  productivity: 'bg-primary/10 text-primary border-primary/20',
+  'time-management': 'bg-accent/10 text-accent border-accent/20',
+  balance: 'bg-success/10 text-success border-success/20',
+  journaling: 'bg-orange-500/10 text-orange-600 border-orange-500/20',
+  fitness: 'bg-red-500/10 text-red-600 border-red-500/20',
+} as const;
+
 
 type ArtifactProps = {
   artifact: {
-    date: string
-    title: string
-    description: string
-    reflection: string
-    quote: string
-    icon: string
-  }
+    date: string;
+    title: string;
+    description: string;
+    reflection: string;
+    quote: string;
+    quoteAuthor: string;
+    icon: string;
+    type: string;
 }
+  index:number
+};
 
-function ExpandableText({
-  text,
-  collapsedLines,
-  expanded,
-  className,
-}: {
-  text: string
-  collapsedLines: number
-  expanded: boolean
-  className?: string
-}) {
-  const ref = useRef<HTMLParagraphElement>(null)
-  const [maxHeight, setMaxHeight] = useState<number | undefined>(undefined)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const computed = window.getComputedStyle(el)
-    const lineHeight = parseFloat(computed.lineHeight || "20")
-    const collapsed = Math.round(lineHeight * collapsedLines)
-    // First, set to auto to measure scrollHeight accurately
-    const prevMax = el.style.maxHeight
-    el.style.maxHeight = "none"
-    const full = el.scrollHeight
-    el.style.maxHeight = prevMax
-    setMaxHeight(expanded ? full : collapsed)
-  }, [text, collapsedLines, expanded])
+const Artifacts = ({ artifact,index }: ArtifactProps) => {
+  const IconComponent = iconMap[artifact.icon] || FileText;
+  const [descExpanded, setDescExpanded] = useState(false);
+  const [reflExpanded, setReflExpanded] = useState(false);
 
   return (
-    <p
-      ref={ref}
-      className={`expander ${className ?? ""}`}
-      style={{ maxHeight: maxHeight !== undefined ? `${maxHeight}px` : undefined }}
+    //
+    <Card
+      className="group relative overflow-hidden bg-gradient-card border-0 shadow-soft hover:shadow-glow transition-all duration-300 hover:-translate-y-1 animate-fade-in"
+      style={{ animationDelay: `${index * 150}ms` }}
     >
-      {text}
-    </p>
-  )
-}
-
-const Artifacts = ({ artifact }: ArtifactProps) => {
-  const IconComponent = iconMap[artifact.icon] || FileText
-  const [descExpanded, setDescExpanded] = useState(false)
-  const [reflExpanded, setReflExpanded] = useState(false)
-  return (
-    <Card className="h-full flex flex-col group cursor-pointer transition-all duration-200 hover:shadow-lg hover:-translate-y-1 bg-card border-border">
-      <CardHeader className="pb-3">
-        <div className="flex items-start justify-between">
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-primary/10">
-              <IconComponent className="w-5 h-5 text-primary" />
-            </div>
-            <Badge variant="secondary" className="text-xs">
-              {/* category */}
-            </Badge>
+      <div className="p-6 space-y-4">
+        {/* Header */}
+        <div className="flex items-start justify-between gap-3">
+          <div
+            className={`flex items-center justify-center w-12 h-12 rounded-xl border ${
+              typeColors[artifact.type as keyof typeof typeColors] || 'bg-muted/10 text-muted-foreground border-muted/20'
+            }`}
+          >
+            <IconComponent className="w-6 h-6" />
           </div>
-          <div className="flex items-center gap-1 text-muted-foreground">
-            <Calendar className="w-3 h-3" />
-            <span className="text-xs">{artifact.date}</span>
-          </div>
+          <Badge variant="outline" className="text-xs font-medium bg-muted/50">
+            {artifact.date}
+          </Badge>
         </div>
-        <CardTitle className="text-lg font-serif text-card-foreground leading-tight line-clamp-2">
+
+        {/* Title */}
+        <h3 className="text-xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors">
           {artifact.title}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="flex-1 flex flex-col">
-        <div className="space-y-2">
-          <p className="text-xs font-medium text-muted-foreground mb-1">Description:</p>
-          <ExpandableText
-            text={artifact.description}
-            collapsedLines={2}
-            expanded={descExpanded}
-            className="text-sm text-card-foreground leading-relaxed"
-          />
-          <button
-            type="button"
-            className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
-            onClick={() => setDescExpanded((v) => !v)}
-            aria-expanded={descExpanded}
-          >
-            <span>{descExpanded ? "Show less" : "Show more"}</span>
-            <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${descExpanded ? "rotate-180" : "rotate-0"}`} />
-          </button>
-        </div>
+        </h3>
 
-        <div className="mt-4 bg-muted/50 p-3 rounded-lg border-l-4 border-primary">
-          <p className="text-xs font-medium text-muted-foreground mb-1">Reflection:</p>
-          <ExpandableText
-            text={artifact.reflection}
-            collapsedLines={3}
-            expanded={reflExpanded}
-            className="text-sm text-card-foreground leading-relaxed"
-          />
-          <button
-            type="button"
-            className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
-            onClick={() => setReflExpanded((v) => !v)}
-            aria-expanded={reflExpanded}
-          >
-            <span>{reflExpanded ? "Show less" : "Show more"}</span>
-            <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${reflExpanded ? "rotate-180" : "rotate-0"}`} />
-          </button>
-        </div>
+        {/* Description */}
+        <div className="space-y-3">
+          <div>
+            <h4 className="text-sm font-semibold text-primary uppercase tracking-wide mb-2 flex items-center gap-2">
+              <div className="w-1 h-4 bg-primary rounded-full"></div>
+              Description
+            </h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {artifact.description}
+            </p>
+          </div>
 
-        <div className="mt-auto bg-accent/5 p-3 rounded-lg border border-accent/20">
-          <div className="flex items-start gap-2">
-            <IconComponent className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-            <p className="text-sm italic text-accent font-medium leading-relaxed">{artifact.quote}</p>
+          {/* Reflection */}
+          <div>
+            <h4 className="text-sm font-semibold text-accent uppercase tracking-wide mb-2 flex items-center gap-2">
+              <div className="w-1 h-4 bg-accent rounded-full"></div>
+              Reflection
+            </h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {artifact.reflection}
+            </p>
           </div>
         </div>
-      </CardContent>
-    </Card>
-  )
-}
 
-export default Artifacts
+        {/* Quote */}
+        <div className="relative pt-4 mt-6 border-t border-border/50">
+          <div className="absolute left-0 top-0 w-8 h-px bg-gradient-primary"></div>
+          <blockquote className="text-sm italic text-foreground/80 leading-relaxed">
+            "{artifact.quote}"
+          </blockquote>
+          <cite className="text-xs text-muted-foreground mt-2 block">
+            — {artifact.quoteAuthor}
+          </cite>
+        </div>
+      </div>
+    </Card>
+  );
+};
+
+export default Artifacts;
