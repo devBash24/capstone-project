@@ -7,65 +7,81 @@ export function FutureGoalsSection() {
 
   return (
     <section id="future-goals" className="space-y-8">
-      <div className="rounded-2xl border border-border shadow-sm bg-card p-6 md:p-8">
-      <div className="text-center mb-8">
-        <p className="text-primary font-medium mb-2">{sectionThree.caption}</p>
-        <h2 className="text-3xl font-serif font-bold text-foreground">Future Goals & Reflections</h2>
-        <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-          {sectionThree.quote}
-        </p>
-      </div>
+      <div className="relative overflow-hidden bg-white/60 backdrop-blur-sm rounded-3xl border border-white/50 shadow-xl p-8 md:p-12">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
+        <div className="relative z-10">
+          <div className="text-center mb-12">
+            <p className="text-purple-600 font-semibold text-lg mb-4">{sectionThree.caption}</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Future Goals & Reflections</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full mb-6"></div>
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-200/50 max-w-3xl mx-auto">
+              <p className="text-slate-700 leading-relaxed text-lg italic">
+                "{sectionThree.quote}"
+              </p>
+              <p className="text-slate-600 text-sm mt-2">— {sectionThree.quoteAuthor}</p>
+            </div>
+          </div>
 
-      <div className="grid lg:grid-cols-2 gap-8">
-        {/* Future Goals */}
-        <Card className="bg-card border-border rounded-xl">
-          <CardHeader>
-            <CardTitle className="text-xl font-serif text-card-foreground flex items-center gap-2">
-              <Target className="w-5 h-5 text-primary" />
-              Future Goals
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {sectionThree.futureGoals.map((goal, index) => (
-              <div key={index} className="flex gap-4 p-4 bg-muted/30 rounded-lg border border-border">
-                <div className="flex-shrink-0 mt-1">
-                  <CheckCircle className="w-5 h-5 text-secondary" />
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Future Goals */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-slate-200/50">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl">
+                  <Target className="w-6 h-6 text-white" />
                 </div>
-                <div className="space-y-2">
-                  <p className="text-card-foreground leading-relaxed">{goal}</p>
+                <h3 className="text-2xl font-bold text-slate-800">Future Goals</h3>
+              </div>
+              <div className="space-y-4">
+                {sectionThree.futureGoals.map((goal, index) => (
+                  <div key={index} className="flex gap-4 p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200/50 hover:shadow-md transition-all duration-300">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center">
+                        <CheckCircle className="w-5 h-5 text-white" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <p className="text-slate-700 leading-relaxed font-medium">{goal}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Insights & Reflections */}
+            <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl p-8 shadow-lg border border-pink-200/50">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl">
+                  <Lightbulb className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800">Key Insights</h3>
+              </div>
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  {sectionThree.keyInsights.map((insight, index) => (
+                    <div key={index} className="flex gap-3 items-start p-4 bg-white/60 rounded-xl border border-pink-200/30">
+                      <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-rose-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-slate-700 leading-relaxed italic">{insight}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="bg-white/80 p-6 rounded-xl border border-pink-200/50 shadow-sm">
+                  <h4 className="text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
+                    <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
+                    Ongoing Growth
+                  </h4>
+                  <p className="text-slate-600 leading-relaxed">
+                    {sectionThree.ongoingGrowth}
+                  </p>
                 </div>
               </div>
-            ))}
-          </CardContent>
-        </Card>
-
-        {/* Insights & Reflections */}
-        <Card className="bg-accent/10 border-accent/30 rounded-xl">
-          <CardHeader>
-            <CardTitle className="text-xl font-serif text-card-foreground flex items-center gap-2">
-              <Lightbulb className="w-5 h-5 text-primary" />
-              Key Insights
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="space-y-4">
-              {sectionThree.keyInsights.map((insight, index) => (
-                <div key={index} className="flex gap-3 items-start">
-                  <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-card-foreground leading-relaxed italic">{insight}</p>
-                </div>
-              ))}
             </div>
-
-            <div className="bg-background/80 p-4 rounded-lg border border-border">
-              <h4 className="font-semibold text-card-foreground mb-2">Ongoing Growth</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {sectionThree.ongoingGrowth}
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+          </div>
+        </div>
       </div>
     </section>
   )

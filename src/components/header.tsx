@@ -3,12 +3,14 @@
 import { useEffect, useMemo, useState } from "react";
 import data from "@/data/eportfolio.json";
 import { cn } from "@/lib/utils";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const sections = [
-  { id: "table-of-contents", label: "Explore" },
-  { id: "introduction", label: "About" },
-  { id: "evidence", label: "Work" },
-  { id: "future-goals", label: "Goals" },
+  { id: "hero", label: "Home", icon: "🏠" },
+  { id: "table-of-contents", label: "Explore", icon: "🧭" },
+  { id: "introduction", label: "About", icon: "👋" },
+  { id: "evidence", label: "Work", icon: "💼" },
+  { id: "future-goals", label: "Goals", icon: "🎯" },
 ];
 
 export default function Header() {
@@ -44,30 +46,46 @@ export default function Header() {
   }, []);
 
   const brandClasses = useMemo(
-    () => cn("font-serif font-bold text-xl transition-colors text-foreground"),
+    () => cn("font-bold text-xl transition-all duration-300 text-slate-800 hover:text-blue-600 group"),
     []
   );
 
   const linkBase =
-    "transition-colors text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+    "relative px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2";
 
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 backdrop-blur-md transition-all",
+        "sticky top-0 z-50 backdrop-blur-md transition-all duration-500",
         scrolled
-          ? "bg-card/80 border-b border-border shadow-sm"
-          : "bg-background/30 border-b border-white/30"
+          ? "bg-white/95 border-b border-slate-200/60 shadow-xl"
+          : "bg-white/30 border-b border-white/40"
       )}
     >
-      <div className="max-w-6xl mx-auto px-6 py-3">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3C/g%3E%3C/svg%3E")`
+      }}></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-4">
         <nav className="flex items-center justify-between gap-4">
-          <a href="#table-of-contents" className={brandClasses}>
-            {data.student.name}
+          {/* Brand */}
+          <a href="#hero" className={brandClasses}>
+            <div className="flex items-center gap-3 group-hover:scale-105 transition-transform duration-300">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg">{data.student.name.split(' ').map(n => n[0]).join('')}</span>
+              </div>
+              <div className="hidden sm:block">
+                <div className="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                  {data.student.name}
+                </div>
+                <div className="text-xs text-slate-500 font-medium">ePortfolio</div>
+              </div>
+            </div>
           </a>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-2">
             {sections.map((s) => (
               <a
                 key={s.id}
@@ -75,51 +93,82 @@ export default function Header() {
                 aria-current={active === s.id ? "page" : undefined}
                 className={cn(
                   linkBase,
-                  "text-foreground/80 hover:text-foreground",
-                  active === s.id && "text-primary"
+                  "flex items-center gap-2 group",
+                  active === s.id 
+                    ? "bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg scale-105" 
+                    : "text-slate-600 hover:text-slate-800 hover:bg-slate-100/80"
                 )}
               >
-                {s.label}
+                <span className="text-sm">{s.icon}</span>
+                <span className="font-medium">{s.label}</span>
+                {active === s.id && (
+                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
+                )}
               </a>
             ))}
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
             aria-label="Toggle menu"
             className={cn(
-              "md:hidden inline-flex items-center justify-center rounded-md border px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-              "border-border text-foreground hover:bg-muted"
+              "md:hidden relative p-3 rounded-xl transition-all duration-300",
+              "bg-white/80 backdrop-blur-sm border border-slate-200/50 shadow-lg",
+              "hover:bg-white hover:shadow-xl hover:scale-105",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             )}
             onClick={() => setMenuOpen((v) => !v)}
           >
-            Menu
+            <div className="w-6 h-6 flex items-center justify-center">
+              {menuOpen ? (
+                <X className="w-5 h-5 text-slate-700" />
+              ) : (
+                <Menu className="w-5 h-5 text-slate-700" />
+              )}
+            </div>
           </button>
         </nav>
       </div>
 
-      {/* Mobile dropdown */}
+      {/* Mobile Dropdown */}
       {menuOpen && (
-        <div
-          className={cn(
-            "md:hidden px-6 pb-4 bg-card/80 border-t border-border"
-          )}
-        >
-          <div className="max-w-6xl mx-auto flex flex-col gap-3">
-            {sections.map((s) => (
-              <a
-                key={s.id}
-                href={`#${s.id}`}
-                onClick={() => setMenuOpen(false)}
-                className={cn(
-                  linkBase,
-                  "text-foreground/80 hover:text-foreground",
-                  active === s.id && "text-primary"
-                )}
-              >
-                {s.label}
-              </a>
-            ))}
+        <div className="md:hidden relative bg-white/95 backdrop-blur-md border-t border-slate-200/60 shadow-xl">
+          <div className="max-w-7xl mx-auto px-6 py-6">
+            <div className="grid grid-cols-2 gap-3">
+              {sections.map((s) => (
+                <a
+                  key={s.id}
+                  href={`#${s.id}`}
+                  onClick={() => setMenuOpen(false)}
+                  className={cn(
+                    "flex items-center gap-3 p-4 rounded-2xl transition-all duration-300 group",
+                    "bg-white/80 backdrop-blur-sm border border-slate-200/50 shadow-lg",
+                    "hover:shadow-xl hover:scale-105 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50",
+                    active === s.id && "bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-xl scale-105"
+                  )}
+                >
+                  <span className="text-lg">{s.icon}</span>
+                  <div>
+                    <div className={cn(
+                      "font-semibold text-sm",
+                      active === s.id ? "text-white" : "text-slate-800"
+                    )}>
+                      {s.label}
+                    </div>
+                    <div className={cn(
+                      "text-xs",
+                      active === s.id ? "text-blue-100" : "text-slate-500"
+                    )}>
+                      {s.id === "hero" && "Back to top"}
+                      {s.id === "table-of-contents" && "Navigate portfolio"}
+                      {s.id === "introduction" && "Learn about me"}
+                      {s.id === "evidence" && "View my work"}
+                      {s.id === "future-goals" && "See my goals"}
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       )}

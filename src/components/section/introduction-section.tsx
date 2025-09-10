@@ -7,63 +7,77 @@ export function IntroductionSection() {
   const sectionOne = data.sectionOne;
   return (
     <section id="introduction" className="space-y-8">
-      <div className="rounded-2xl border border-border shadow-sm bg-card p-6 md:p-8">
-      <div className="text-center mb-8">
-        <p className="text-secondary-foreground font-medium mb-2">{sectionOne.caption}</p>
-        <h2 className="text-3xl font-serif font-bold text-foreground">Introduction</h2>
-      </div>
+      <div className="relative overflow-hidden bg-white/60 backdrop-blur-sm rounded-3xl border border-white/50 shadow-xl p-8 md:p-12">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3C/g%3E%3C/svg%3E")`
+        }}></div>
+        
+        <div className="relative z-10">
+          <div className="text-center mb-12">
+            <p className="text-blue-600 font-semibold text-lg mb-4">{sectionOne.caption}</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Introduction</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
+          </div>
 
-      <div className="grid lg:grid-cols-2 gap-8">
-        {/* Purpose Statement */}
-        <Card className="bg-card border-border rounded-xl">
-          <CardHeader>
-            <CardTitle className="text-xl font-serif text-card-foreground">Purpose Statement</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-card-foreground leading-relaxed">
-              {sectionOne.purposeStatement}
-            </p>
-            <p className="text-card-foreground leading-relaxed">
-              Welcome to my digital portfolio, a comprehensive showcase of my academic journey, professional
-              development, and personal growth. This ePortfolio serves as a living document that chronicles my
-              educational experiences, achievements, and reflections.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Through this collection of work, I aim to demonstrate my commitment to lifelong learning, critical
-              thinking, and professional excellence. Each artifact represents a milestone in my educational journey and
-              contributes to my overall growth as a scholar.
-            </p>
-          </CardContent>
-        </Card>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Purpose Statement */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-slate-200/50">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full"></div>
+                <h3 className="text-2xl font-bold text-slate-800">Purpose Statement</h3>
+              </div>
+              <div className="space-y-4">
+                <p className="text-slate-700 leading-relaxed text-lg">
+                  {sectionOne.purposeStatement}
+                </p>
+                <div className="bg-blue-50/50 p-6 rounded-xl border border-blue-200/50">
+                  <p className="text-slate-600 leading-relaxed">
+                    Welcome to my digital portfolio, a comprehensive showcase of my academic journey, professional
+                    development, and personal growth. This ePortfolio serves as a living document that chronicles my
+                    educational experiences, achievements, and reflections.
+                  </p>
+                </div>
+                <p className="text-slate-600 leading-relaxed">
+                  Through this collection of work, I aim to demonstrate my commitment to lifelong learning, critical
+                  thinking, and professional excellence. Each artifact represents a milestone in my educational journey and
+                  contributes to my overall growth as a scholar.
+                </p>
+              </div>
+            </div>
 
-        {/* Letter to Self */}
-        <Card className="bg-accent/10 border-accent/30 rounded-xl">
-          <CardHeader>
-            <CardTitle className="text-xl font-serif text-card-foreground flex items-center gap-2">
-              <Quote className="w-5 h-5 text-primary" />
-              Letter to Self
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="bg-background/80 p-4 rounded-lg border border-border">
-              <p className="text-card-foreground leading-relaxed italic">
-                {sectionOne.letterToSelf}
-              </p>
+            {/* Letter to Self */}
+            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 shadow-lg border border-indigo-200/50">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl">
+                  <Quote className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800">Letter to Self</h3>
+              </div>
+              <div className="space-y-6">
+                <div className="bg-white/80 p-6 rounded-xl border border-indigo-200/50 shadow-sm">
+                  <p className="text-slate-700 leading-relaxed italic text-lg">
+                    {sectionOne.letterToSelf}
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <h4 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+                    <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
+                    Key Milestones
+                  </h4>
+                  <ul className="space-y-3">
+                    {sectionOne.keyMilestones.map((milestone, index) => (
+                      <li key={index} className="flex items-start gap-3 p-3 bg-white/60 rounded-lg border border-indigo-200/30">
+                        <div className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mt-2 flex-shrink-0"></div>
+                        <span className="text-slate-700 leading-relaxed">{milestone}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div className="space-y-2">
-              <h4 className="font-semibold text-card-foreground">Key Milestones:</h4>
-              <ul className="space-y-1 text-muted-foreground">
-                {sectionOne.keyMilestones.map((milestone, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                    {milestone}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+          </div>
+        </div>
       </div>
     </section>
   )
