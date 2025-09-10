@@ -150,3 +150,34 @@ section[id] { scroll-margin-top: 80px; }
 
 /* Utilities: smooth height transition for expand/collapse */
 .expander { overflow: hidden; transition: max-height 300ms ease-in-out; }
+
+/* Typewriter Animation */
+.typewriter-text {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid transparent;
+  white-space: nowrap;
+  animation: typewriter 3s steps(18, end) 1s forwards, blink-caret 0.75s step-end infinite;
+  max-width: 0;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  animation: blink-cursor 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes typewriter {
+  from { max-width: 0; }
+  to { max-width: 100%; }
+}
+
+@keyframes blink-cursor {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes blink-caret {
+  0%, 50% { border-color: transparent; }
+  51%, 100% { border-color: #3b82f6; }
+}

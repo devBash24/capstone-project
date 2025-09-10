@@ -20,32 +20,18 @@ export function IntroductionSection() {
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Purpose Statement */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-slate-200/50">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full"></div>
-                <h3 className="text-2xl font-bold text-slate-800">Purpose Statement</h3>
-              </div>
-              <div className="space-y-4">
-                <p className="text-slate-700 leading-relaxed text-lg">
-                  {sectionOne.purposeStatement}
-                </p>
-                <div className="bg-blue-50/50 p-6 rounded-xl border border-blue-200/50">
-                  <p className="text-slate-600 leading-relaxed">
-                    Welcome to my digital portfolio, a comprehensive showcase of my academic journey, professional
-                    development, and personal growth. This ePortfolio serves as a living document that chronicles my
-                    educational experiences, achievements, and reflections.
-                  </p>
-                </div>
-                <p className="text-slate-600 leading-relaxed">
-                  Through this collection of work, I aim to demonstrate my commitment to lifelong learning, critical
-                  thinking, and professional excellence. Each artifact represents a milestone in my educational journey and
-                  contributes to my overall growth as a scholar.
-                </p>
-              </div>
+          {/* Purpose Statement - Full Width */}
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-slate-200/50 mb-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full"></div>
+              <h3 className="text-2xl font-bold text-slate-800">Purpose Statement</h3>
             </div>
+            <p className="text-slate-700 leading-relaxed text-lg">
+              {sectionOne.purposeStatement}
+            </p>
+          </div>
 
+          <div className="grid lg:grid-cols-2 gap-8">
             {/* Letter to Self */}
             <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 shadow-lg border border-indigo-200/50">
               <div className="flex items-center gap-3 mb-6">
@@ -54,27 +40,31 @@ export function IntroductionSection() {
                 </div>
                 <h3 className="text-2xl font-bold text-slate-800">Letter to Self</h3>
               </div>
-              <div className="space-y-6">
-                <div className="bg-white/80 p-6 rounded-xl border border-indigo-200/50 shadow-sm">
-                  <p className="text-slate-700 leading-relaxed italic text-lg">
-                    {sectionOne.letterToSelf}
-                  </p>
-                </div>
-                <div className="space-y-4">
-                  <h4 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-                    <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
-                    Key Milestones
-                  </h4>
-                  <ul className="space-y-3">
-                    {sectionOne.keyMilestones.map((milestone, index) => (
-                      <li key={index} className="flex items-start gap-3 p-3 bg-white/60 rounded-lg border border-indigo-200/30">
-                        <div className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-slate-700 leading-relaxed">{milestone}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="bg-white/80 p-6 rounded-xl border border-indigo-200/50 shadow-sm">
+                <p className="text-slate-700 leading-relaxed italic text-lg">
+                  {sectionOne.letterToSelf}
+                </p>
               </div>
+            </div>
+
+            {/* Key Milestones */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 shadow-lg border border-blue-200/50">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl">
+                  <div className="w-6 h-6 text-white flex items-center justify-center font-bold">✓</div>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800">Key Milestones</h3>
+              </div>
+              <ul className="space-y-4">
+                {sectionOne.keyMilestones.map((milestone, index) => (
+                  <li key={index} className="flex items-start gap-3 p-4 bg-white/60 rounded-lg border border-blue-200/30 hover:shadow-md transition-all duration-300">
+                    <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-white text-xs font-bold">{index + 1}</span>
+                    </div>
+                    <span className="text-slate-700 leading-relaxed">{milestone}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

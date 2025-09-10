@@ -48,9 +48,13 @@ export default async function Home() {
           <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mb-8"></div>
           
           {/* Goal Statement */}
-          <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light mb-8">
-            {data.student.goal}
-          </p>
+          <div className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light mb-8">
+            <span>Working towards becoming a </span>
+            <span className="inline-block">
+              <span className="typewriter-text">Software Developer</span>
+              <span className="typewriter-cursor">|</span>
+            </span>
+          </div>
           
           {/* Motto */}
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 max-w-3xl mx-auto border border-white/50 shadow-lg">
