@@ -25,11 +25,13 @@ export function EvidenceSection() {
           </div>
  
           <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-            {sectionTwo.artifacts.map((artifact,index)=>(
-              <div key={index} className="break-inside-avoid">
-                <Artifacts index={index} artifact={artifact}/>
-              </div>
-            ))}
+            {sectionTwo.artifacts
+              .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+              .map((artifact,index)=>(
+                <div key={index} className="break-inside-avoid">
+                  <Artifacts index={index} artifact={artifact}/>
+                </div>
+              ))}
           </div>
         </div>
       </div>
