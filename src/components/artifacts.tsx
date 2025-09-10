@@ -1,6 +1,4 @@
 "use client";
-import { useState } from "react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge } from "./ui/badge";
 import {
   Calendar,
@@ -14,8 +12,6 @@ import {
   Linkedin,
   Star,
   FileText,
-  ChevronDown,
-  Icon,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ElementType> = {
@@ -55,13 +51,10 @@ type ArtifactProps = {
 
 const Artifacts = ({ artifact,index }: ArtifactProps) => {
   const IconComponent = iconMap[artifact.icon] || FileText;
-  const [descExpanded, setDescExpanded] = useState(false);
-  const [reflExpanded, setReflExpanded] = useState(false);
 
   return (
-    //
-    <Card
-      className="group relative overflow-hidden bg-gradient-card border-0 shadow-soft hover:shadow-glow transition-all duration-300 hover:-translate-y-1 animate-fade-in"
+    <div
+      className="group relative overflow-hidden bg-white/80 backdrop-blur-sm rounded-2xl border border-slate-200/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
       style={{ animationDelay: `${index * 150}ms` }}
     >
       <div className="p-6 space-y-4">
@@ -112,14 +105,14 @@ const Artifacts = ({ artifact,index }: ArtifactProps) => {
         <div className="relative pt-4 mt-6 border-t border-border/50">
           <div className="absolute left-0 top-0 w-8 h-px bg-gradient-primary"></div>
           <blockquote className="text-sm italic text-foreground/80 leading-relaxed">
-            "{artifact.quote}"
+            &ldquo;{artifact.quote}&rdquo;
           </blockquote>
           <cite className="text-xs text-muted-foreground mt-2 block">
             — {artifact.quoteAuthor}
           </cite>
         </div>
       </div>
-    </Card>
+    </div>
   );
 };
 

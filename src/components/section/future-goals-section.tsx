@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Target, Lightbulb, CheckCircle } from "lucide-react"
 import data from "@/data/eportfolio.json"
 
@@ -20,7 +19,7 @@ export function FutureGoalsSection() {
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-600 mx-auto rounded-full mb-6"></div>
             <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-200/50 max-w-3xl mx-auto">
               <p className="text-slate-700 leading-relaxed text-lg italic">
-                "{sectionThree.quote}"
+                &ldquo;{sectionThree.quote}&rdquo;
               </p>
               <p className="text-slate-600 text-sm mt-2">— {sectionThree.quoteAuthor}</p>
             </div>

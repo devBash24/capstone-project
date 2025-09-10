@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import data from "@/data/eportfolio.json";
 import { cn } from "@/lib/utils";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X} from "lucide-react";
 
 const sections = [
   { id: "hero", label: "Home", icon: "🏠" },

@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card"
 import { BookOpen, FolderOpen, Rocket } from "lucide-react"
 
 export function TableOfContents() {

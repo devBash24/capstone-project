@@ -60,7 +60,7 @@ export default async function Home() {
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 max-w-3xl mx-auto border border-white/50 shadow-lg">
             <div className="text-6xl mb-4">✨</div>
             <p className="text-lg text-slate-700 italic leading-relaxed">
-              "{data.student.motto}"
+              &ldquo;{data.student.motto}&rdquo;
             </p>
           </div>
         </div>
@@ -140,10 +140,10 @@ export default async function Home() {
       
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 text-center">
         <div className="mb-8">
-          <h3 className="text-2xl font-bold text-slate-800 mb-4">Let's Connect</h3>
+          <h3 className="text-2xl font-bold text-slate-800 mb-4">Let&apos;s Connect</h3>
           <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mb-6"></div>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-8">
-            I'm always interested in connecting with fellow developers, mentors, and opportunities in the tech industry.
+            I&apos;m always interested in connecting with fellow developers, mentors, and opportunities in the tech industry.
           </p>
         </div>
         

@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Quote } from "lucide-react"
 import data from "@/data/eportfolio.json"
 
