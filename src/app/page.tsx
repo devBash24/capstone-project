@@ -2,6 +2,7 @@ import { EvidenceSection } from "@/components/section/evidence-section";
 import { FutureGoalsSection } from "@/components/section/future-goals-section";
 import { IntroductionSection } from "@/components/section/introduction-section";
 import { TableOfContents } from "@/components/section/table-of-contents";
+import { ContactSection } from "@/components/section/contact-section";
 import Header from "@/components/header";
 import data from "@/data/eportfolio.json";
 
@@ -86,26 +87,19 @@ export default async function Home() {
               Connect on LinkedIn
             </span>
           </a>
+          <a 
+            href="#contact" 
+            className="group relative bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-10 py-4 rounded-2xl font-semibold text-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 transform"
+          >
+            <span className="relative z-10 flex items-center gap-2">
+              <span>✉️</span>
+              Contact Me
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300"></div>
+          </a>
         </div>
 
-        {/* Stats/Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="text-4xl mb-3">📝</div>
-            <div className="text-3xl font-bold text-blue-600 mb-2">10+</div>
-            <div className="text-slate-600 font-medium">Weekly Reflections</div>
-          </div>
-          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="text-4xl mb-3">🎯</div>
-            <div className="text-3xl font-bold text-indigo-600 mb-2">100%</div>
-            <div className="text-slate-600 font-medium">Goal Achievement</div>
-          </div>
-          <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div className="text-4xl mb-3">🚀</div>
-            <div className="text-3xl font-bold text-slate-600 mb-2">∞</div>
-            <div className="text-slate-600 font-medium">Growth Mindset</div>
-          </div>
-        </div>
+      
       </div>
 
       {/* Scroll Indicator */}
@@ -129,6 +123,9 @@ export default async function Home() {
 
       {/* Future Goals & Reflections Section */}
       <FutureGoalsSection />
+
+      {/* Contact Section */}
+      <ContactSection />
     </main>
 
     {/* Updated Footer */}
@@ -169,6 +166,17 @@ export default async function Home() {
               </svg>
             </div>
             <span className="text-slate-700 font-medium group-hover:text-slate-800 transition-colors">GitHub</span>
+          </a>
+          <a 
+            href="#contact" 
+            className="group flex items-center gap-3 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-lg border border-slate-200/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          >
+            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <span className="text-slate-700 font-medium group-hover:text-indigo-600 transition-colors">Contact Form</span>
           </a>
           <a 
             href={`mailto:${data.links.email}`} 

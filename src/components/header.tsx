@@ -9,7 +9,7 @@ const sections = [
   { id: "hero", label: "Home", icon: "🏠" },
   { id: "table-of-contents", label: "Explore", icon: "🧭" },
   { id: "introduction", label: "About", icon: "👋" },
-  { id: "evidence", label: "Work", icon: "💼" },
+  { id: "evidence", label: "Artifacts", icon: "💼" },
   { id: "future-goals", label: "Goals", icon: "🎯" },
 ];
 

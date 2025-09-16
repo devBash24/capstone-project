@@ -1,4 +1,4 @@
-import { BookOpen, FolderOpen, Rocket } from "lucide-react"
+import { BookOpen, FolderOpen, Rocket, Mail } from "lucide-react"
 
 export function TableOfContents() {
   const sections = [
