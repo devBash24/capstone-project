@@ -122,6 +122,26 @@
         "quoteAuthor": "Benjamin Franklin",
         "icon": "FileText",
         "type": "productivity"
+      },
+      {
+        "date": "2025-09-14",
+        "title": "Restarting Exercise Routine",
+        "description": "After getting busy and dropping exercise for a while, I was finally able to restart my fitness routine last week.",
+        "reflection": "I'm a bit disappointed that I lost consistency, but I'm also proud that I pushed myself to start back instead of giving up entirely. This showed me that setbacks are temporary, and what matters is returning to the habits that support balance and well-being. It reminded me that growth is not a straight line but about resilience and restarting when necessary.",
+        "quote": "Fall seven times and stand up eight.",
+        "quoteAuthor": "Japanese Proverb",
+        "icon": "Dumbbell",
+        "type": "fitness"
+      },
+      {
+        "date": "2025-09-21",
+        "title": "AWS Developer Associate Practice - Journal App",
+        "description": "Began a series of three projects to strengthen my AWS Developer Associate skills. Successfully built and deployed the first project: a simple Journal Entry App, focusing on authentication, API integration, and cloud deployment.",
+        "reflection": "Completing this project gave me hands-on experience with AWS services and boosted my confidence in applying theory to practice. It reminded me that growth comes from building real solutions, not just studying. This project also connects to my journaling habit, showing how technical learning and personal growth can align. I now feel motivated to finish the other two projects in my plan.",
+        "quote": "The best way to learn is by doing.",
+        "quoteAuthor": "Richard Branson",
+        "icon": "Notebook",
+        "type": "productivity"
       }
     ]
   },

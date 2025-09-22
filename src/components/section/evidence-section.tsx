@@ -1,10 +1,18 @@
+"use client"
 import data from "@/data/eportfolio.json"
 import Artifacts from "../artifacts";
 
+import Masonry from "react-masonry-css"
+const breakpointColumnsObj = {
+  default: 3,
+  1100: 2,
+  700: 1
+};
 
 
 export function EvidenceSection() {
   const sectionTwo = data.sectionTwo;
+  const artifacts = sectionTwo.artifacts.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
   return (
     <section id="evidence" className="space-y-8">
       <div className="relative overflow-hidden bg-white/60 backdrop-blur-sm rounded-3xl border border-white/50 shadow-xl p-8 md:p-12">
@@ -23,16 +31,15 @@ export function EvidenceSection() {
               skill development.
             </p>
           </div>
- 
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-            {sectionTwo.artifacts
-              .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-              .map((artifact,index)=>(
-                <div key={index} className="break-inside-avoid">
-                  <Artifacts index={index} artifact={artifact}/>
-                </div>
-              ))}
-          </div>
+          <Masonry
+  breakpointCols={breakpointColumnsObj}
+  className="flex gap-8"
+  columnClassName="space-y-8"
+>
+  {artifacts.map((artifact, index) => (
+    <Artifacts key={index} index={index} artifact={artifact} />
+  ))}
+</Masonry>
         </div>
       </div>
     </section>
