@@ -4,40 +4,47 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated to modern purple/indigo gradient color scheme */
-  --background: oklch(0.99 0 0); /* Off-white */
-  --foreground: oklch(0.15 0 0); /* Dark gray */
-  --card: oklch(1 0 0); /* Pure white */
-  --card-foreground: oklch(0.15 0 0); /* Dark gray */
-  --popover: oklch(1 0 0); /* White */
-  --popover-foreground: oklch(0.15 0 0); /* Dark gray */
-  --primary: oklch(0.55 0.25 270); /* Purple */
-  --primary-foreground: oklch(1 0 0); /* White */
-  --secondary: oklch(0.6 0.2 250); /* Indigo */
-  --secondary-foreground: oklch(1 0 0); /* White */
-  --muted: oklch(0.96 0 0); /* Light gray */
-  --muted-foreground: oklch(0.5 0 0); /* Medium gray */
-  --accent: oklch(0.65 0.3 280); /* Bright purple */
-  --accent-foreground: oklch(1 0 0); /* White */
+  --background: oklch(0.975 0.008 85);
+  --foreground: oklch(0.23 0.012 40);
+  --card: oklch(0.992 0.004 80);
+  --card-foreground: oklch(0.23 0.012 40);
+  --popover: oklch(0.995 0.003 80);
+  --popover-foreground: oklch(0.23 0.012 40);
+  --primary: oklch(0.37 0.06 195);
+  --primary-foreground: oklch(0.985 0.004 85);
+  --secondary: oklch(0.92 0.01 80);
+  --secondary-foreground: oklch(0.3 0.012 40);
+  --muted: oklch(0.945 0.008 80);
+  --muted-foreground: oklch(0.5 0.01 50);
+  --accent: oklch(0.62 0.05 175);
+  --accent-foreground: oklch(0.18 0.012 40);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.9 0 0); /* Light border */
-  --input: oklch(1 0 0); /* White */
-  --ring: oklch(0.55 0.25 270); /* Purple for focus rings */
-  --chart-1: oklch(0.55 0.25 270); /* Purple */
-  --chart-2: oklch(0.6 0.2 250); /* Indigo */
-  --chart-3: oklch(0.65 0.3 280); /* Bright purple */
-  --chart-4: oklch(0.5 0 0); /* Medium gray */
-  --chart-5: oklch(0.96 0 0); /* Light gray */
-  --radius: 0.75rem; /* Increased border radius for more modern look */
-  --sidebar: oklch(0.96 0 0);
-  --sidebar-foreground: oklch(0.15 0 0);
-  --sidebar-primary: oklch(1 0 0);
-  --sidebar-primary-foreground: oklch(0.15 0 0);
-  --sidebar-accent: oklch(0.55 0.25 270);
-  --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.9 0 0);
-  --sidebar-ring: oklch(0.55 0.25 270);
+  --border: oklch(0.88 0.01 80);
+  --input: oklch(0.992 0.003 80);
+  --ring: oklch(0.5 0.04 190);
+  --chart-1: oklch(0.37 0.06 195);
+  --chart-2: oklch(0.62 0.05 175);
+  --chart-3: oklch(0.56 0.05 70);
+  --chart-4: oklch(0.5 0.01 50);
+  --chart-5: oklch(0.84 0.012 80);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.96 0.008 80);
+  --sidebar-foreground: oklch(0.23 0.012 40);
+  --sidebar-primary: oklch(0.992 0.003 80);
+  --sidebar-primary-foreground: oklch(0.23 0.012 40);
+  --sidebar-accent: oklch(0.37 0.06 195);
+  --sidebar-accent-foreground: oklch(0.985 0.004 85);
+  --sidebar-border: oklch(0.88 0.01 80);
+  --sidebar-ring: oklch(0.5 0.04 190);
+  --surface-soft: oklch(0.955 0.009 80);
+  --surface-strong: oklch(0.925 0.012 78);
+  --accent-soft: oklch(0.9 0.018 185);
+  --accent-strong: oklch(0.31 0.055 195);
+  --hero-dot: oklch(0.76 0.02 85);
+  --section-rule: oklch(0.53 0.03 185);
+  --success: oklch(0.55 0.08 155);
+  --success-foreground: oklch(0.16 0.012 40);
 }
 
 .dark {
@@ -76,10 +83,9 @@
 }
 
 @theme inline {
-  /* Added Poppins and Inter font families for ePortfolio typography */
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Poppins", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: var(--font-geist-sans);
+  --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-mono: var(--font-geist-mono);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -117,6 +123,14 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-strong: var(--surface-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-strong: var(--accent-strong);
+  --color-hero-dot: var(--hero-dot);
+  --color-section-rule: var(--section-rule);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
 }
 
 @layer base {
@@ -126,7 +140,6 @@
   body {
     @apply bg-background text-foreground font-sans;
   }
-  /* Added heading styles using Poppins font */
   h1,
   h2,
   h3,
@@ -179,5 +192,5 @@ section[id] { scroll-margin-top: 80px; }
 
 @keyframes blink-caret {
   0%, 50% { border-color: transparent; }
-  51%, 100% { border-color: #3b82f6; }
+  51%, 100% { border-color: oklch(0.37 0.06 195); }
 }

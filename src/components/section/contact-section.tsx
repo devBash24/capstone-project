@@ -66,7 +66,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="space-y-8">
-      <div className="relative overflow-hidden bg-white/60 backdrop-blur-sm rounded-3xl border border-white/50 shadow-xl p-8 md:p-12">
+      <div className="relative overflow-hidden rounded-3xl border border-border bg-card/85 p-8 shadow-sm md:p-12">
         <div
           className="absolute inset-0 opacity-5"
           style={{
@@ -77,11 +77,11 @@ export function ContactSection() {
 
         <div className="relative z-10">
           <div className="text-center mb-10">
-            <p className="text-blue-600 font-semibold text-lg mb-4">Let’s talk</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+            <p className="mb-4 text-lg font-semibold text-primary">Let’s talk</p>
+            <h2 className="mb-4 text-4xl text-foreground md:text-5xl">
               Contact Me
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full"></div>
+            <div className="mx-auto h-px w-24 bg-section-rule"></div>
           </div>
 
           {status === "success" && (
@@ -97,7 +97,7 @@ export function ContactSection() {
 
           <form onSubmit={onSubmit} className="grid gap-6 max-w-2xl mx-auto">
             <div className="grid gap-2">
-              <label htmlFor="name" className="text-slate-700 font-medium">
+              <label htmlFor="name" className="font-medium text-foreground">
                 Your Name
               </label>
               <input
@@ -107,11 +107,11 @@ export function ContactSection() {
                 onChange={(e) => setName(e.target.value)}
                 required
                 placeholder="Jane Doe"
-                className="w-full rounded-xl border border-slate-200/60 bg-white/80 backdrop-blur-sm px-4 py-3 text-slate-700 placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/25"
               />
             </div>
             <div className="grid gap-2">
-              <label htmlFor="email" className="text-slate-700 font-medium">
+              <label htmlFor="email" className="font-medium text-foreground">
                 Your Email
               </label>
               <input
@@ -122,11 +122,11 @@ export function ContactSection() {
                 required
                 aria-invalid={status === "error" && !!errorMsg}
                 placeholder="you@example.com"
-                className="w-full rounded-xl border border-slate-200/60 bg-white/80 backdrop-blur-sm px-4 py-3 text-slate-700 placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/25"
               />
             </div>
             <div className="grid gap-2">
-              <label htmlFor="message" className="text-slate-700 font-medium">
+              <label htmlFor="message" className="font-medium text-foreground">
                 Message
               </label>
               <textarea
@@ -136,7 +136,7 @@ export function ContactSection() {
                 required
                 rows={6}
                 placeholder="Write your message..."
-                className="w-full rounded-xl border border-slate-200/60 bg-white/80 backdrop-blur-sm px-4 py-3 text-slate-700 placeholder-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-ring/25"
               />
             </div>
 
@@ -144,12 +144,11 @@ export function ContactSection() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="group relative inline-flex items-center gap-2 rounded-2xl px-8 py-3 font-semibold text-white shadow-xl transition-all duration-300 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 disabled:opacity-60"
+                className="inline-flex items-center gap-2 rounded-2xl bg-primary px-8 py-3 font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:bg-accent-strong hover:shadow-md disabled:opacity-60"
               >
-                <span className="relative z-10">
+                <span>
                   {status === "submitting" ? "Sending..." : "Send Message"}
                 </span>
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 blur opacity-0 group-hover:opacity-75 transition-opacity duration-300" />
               </button>
             </div>
           </form>
